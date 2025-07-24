@@ -12,8 +12,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827; /* bg-gray-900 */
-            color: #f3f4f6; /* text-gray-100 */
+            background-color: #111827; 
+            color: #f3f4f6; 
         }
 
         .card {
@@ -31,8 +31,6 @@
 
     <header class="py-6 bg-gray-800 shadow-lg">
         <div class="container mx-auto flex justify-center items-center flex-col gap-2">
-            
-            <!-- SVG ÍCONE DA LOGO -->
             <div class="h-16 w-16 text-cyan-400">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                     <title>Ícone da Torre de Urza</title>
@@ -43,16 +41,6 @@
             </div>
             <h1 class="text-xl font-bold tracking-wider text-gray-200">A TORRE DE URZA</h1>
 
-        </div>
-    </header>
-
-<body class="bg-gray-900 text-gray-100 flex flex-col min-h-screen">
-
-    <!-- Seção do Cabeçalho com a Logo -->
-    <header class="py-6 bg-gray-800 shadow-lg">
-        <div class="container mx-auto flex justify-center">
-            <!-- ALTERAR AQUI: Substitua pelo link da sua imagem de logo hospedada online -->
-            <img src="torredeurza.logo.png" alt="Logo da Loja" class="h-16">
         </div>
     </header>
 
@@ -149,54 +137,40 @@
             ];
 
             const renderizarCartas = (cartasParaRenderizar) => {
-                listaCartasContainer.innerHTML = ''; // Limpa a lista antes de renderizar
-
+                listaCartasContainer.innerHTML = '';
                 if (cartasParaRenderizar.length === 0) {
-                    listaCartasContainer.innerHTML = `<p class="col-span-full text-center text-gray-400">Nenhuma carta encontrada com os filtros selecionados.</p>`;
+                    listaCartasContainer.innerHTML = `<p class="col-span-full text-center text-gray-400">Nenhuma carta encontrada.</p>`;
                     return;
                 }
-
                 cartasParaRenderizar.forEach(carta => {
                     const cardElement = document.createElement('div');
                     cardElement.className = 'card bg-gray-800 rounded-lg overflow-hidden shadow-lg flex flex-col';
-
-                    // A estrutura do card com a imagem no topo.
                     cardElement.innerHTML = `
-                        <img src="${carta.imagem}" alt="Imagem de ${carta.nome}" class="w-full h-auto object-cover aspect-[223/310]">
+                        <img src="${carta.imagem}" alt="Imagem de ${carta.nome}" class="w-full h-auto object-cover aspect-[223/310]" onerror="this.style.display='none'">
                         <div class="p-4 flex flex-col flex-grow">
                             <h3 class="text-lg font-bold text-cyan-400">${carta.nome}</h3>
                             <p class="mt-2 text-gray-300">R$ ${carta.preco.toFixed(2).replace('.', ',')}</p>
                             <p class="mt-auto pt-2 text-xs text-gray-500 font-mono">${carta.categoria}</p>
                         </div>
                     `;
-
                     listaCartasContainer.appendChild(cardElement);
                 });
             };
 
-            /**
-             * Função que aplica os filtros selecionados pelo usuário.
-             */
             const aplicarFiltros = () => {
                 const categoriaSelecionada = categoriaSelect.value;
                 const precoMaximo = parseFloat(precoInput.value) || 0;
-
                 const cartasFiltradas = cartas.filter(carta => {
                     const filtroCategoria = !categoriaSelecionada || carta.categoria === categoriaSelecionada;
                     const filtroPreco = !precoMaximo || carta.preco <= precoMaximo;
                     return filtroCategoria && filtroPreco;
                 });
-
                 renderizarCartas(cartasFiltradas);
             };
 
-            // --- EVENT LISTENERS ---
             filtrarBtn.addEventListener('click', aplicarFiltros);
-
-            // --- INICIALIZAÇÃO ---
-            renderizarCartas(cartas); // Mostra todas as cartas inicialmente
+            renderizarCartas(cartas);
         });
-    </script>
 </body>
 
 </html>
