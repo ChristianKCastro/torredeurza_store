@@ -1,107 +1,188 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A Torre de Urza - Sua Loja de Cartas do mundo de Magic </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="responsivo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Torre de Urza! Sua Loja de Cartas Magic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #f3f4f6; /* text-gray-100 */
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1), 0 6px 6px rgba(0, 255, 255, 0.1);
+        }
+    </style>
 </head>
 
-<body>
-    <header class="cabecalho">
-        <img src="torredeurza.logo.png" alt="Logo TOrre de Urze">
-    </header>
-    <main class="container">
-        <h1 class="produtos">Produtos</h1>
-        <div class="filtros">
-            <div class="categorias-cartas">
-                <label for="categoria">Categoria</label>
-                <select id="categoria">
-                    <option value="">Selecione uma carta</option>
-                    <option value="comum">Comum</option>
-                    <option value="rara">Rara</option>
-                    <option value="épica">Épica</option>
-                </select>
-            </div>
-            <div class="preco-cartas">
-                <label for="preco">Preço Máximo (R$)</label>
-                <input type="text" id="preco" class="preco" placeholder="Ex: 100">
-            </div>
-            <button class="btn-filtrar">Aplicar filtros</button>
-        </div>
-    <ul class="cartas">
-        <li class="carta" data-categoria="Épica" data-preco="3.000">
-            <img src="carta-arkanon.png" alt="">
+<body class="bg-gray-900 text-gray-100 flex flex-col min-h-screen">
 
-            <div class="informacoes">
-                <h2 class="nome-personagem">
-                    Arkannon
-                </h2>
-                <span class="categoria">Categoria: Épica</span>
-                <span class="preco">R$3.000,00 </span>
-                <a href="http://wa.me/xxxxxxxxx?text=Olá, quero comprar a carta Arkanon!" class="btn-comprar"
-                    target="_blank">Comprar</a>
-            </div>
-        </li>
-        <li class="carta" data-categoria="Épica" data-preco="4000">
-            <img src="carta-lymara.png" alt="Carta Lymara" />
-            <div class="informacoes">
-                <h2 class="nome-personagem">Lymara</h2>
-                <span class="categoria">Categoria: Épica</span>
-                <span class="preco">R$ 4.000,00</span>
-                <a href="http://wa.me/xxxxxxxx?text=Olá, quero comprar a carta Lymara!" class="btn-comprar"
-                    target="_blank">Comprar</a>
-            </div>
-        </li>
-        <li class="carta" data-categoria="Comum" data-preco="800">
-            <img src="carta-kaelthar.png" alt="Carta Kaelthar" />
-            <div class="informacoes">
-                <h2 class="nome-personagem">Kaelthar</h2>
-                <span class="categoria">Categoria: Comum</span>
-                <span class="preco">R$ 800,00</span>
-                <a href="http://wa.me/xxxxxxxx?text=Olá, quero comprar a carta Kaelthar!" class="btn-comprar"
-                    target="_blank">Comprar</a>
-            </div>
-        </li>
-        <li class="carta" data-categoria="Rara" data-preco="1500">
-            <img src="carta-maldrik.png" alt="Carta Maldrik" />
-            <div class="informacoes">
-                <h2 class="nome-personagem">Maldrik</h2>
-                <span class="categoria">Categoria: Rara</span>
-                <span class="preco">R$ 1.500,00</span>
-                <a href="http://wa.me/xxxxxxxx?text=Olá, quero comprar a carta Maldrik" class="btn-comprar"
-                    target="_blank">Comprar</a>
-            </div>
-        </li>
-        <li class="carta" data-categoria="Comum" data-preco="600">
-            <img src="carta-drahven.png" alt="Carta Drahven" />
-            <div class="informacoes">
-                <h2 class="nome-personagem">Drahven</h2>
-                <span class="categoria">Categoria: Comum</span>
-                <span class="preco">R$ 600,00</span>
-                <a href="http://wa.me/xxxxxxxx?text=Olá, quero comprar a carta Drahven!" class="btn-comprar"
-                    target="_blank">Comprar</a>
-            </div>
-        </li>
-        <li class="carta" data-categoria="Comum" data-preco="400">
-            <img src="carta-nyxsombra.png" alt="Carta Nyxsombra" />
-            <div class="informacoes">
-                <h2 class="nome-personagem">Nyxsombra</h2>
-                <span class="categoria">Categoria: Comum</span>
-                <span class="preco">R$ 400,00</span>
-                <a href="http://wa.me/xxxxxxxx?text=Olá, quero comprar a carta Nyxsombra!" class="btn-comprar"
-                    target="_blank">Comprar</a>
-            </div>
-        </li>
-    </ul>
+    <!-- Seção do Cabeçalho com a Logo -->
+    <header class="py-6 bg-gray-800 shadow-lg">
+        <div class="container mx-auto flex justify-center">
+            <!-- ALTERAR AQUI: Substitua pelo link da sua imagem de logo hospedada online -->
+            <img src="torredeurza.logo.png" alt="Logo da Loja" class="h-16">
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mx-auto p-4 md:p-8 flex-grow">
+        <div class="flex flex-col md:flex-row gap-8">
+
+            <!-- Barra Lateral de Filtros -->
+            <aside class="w-full md:w-1/4 lg:w-1/5">
+                <div class="bg-gray-800 p-6 rounded-xl shadow-md sticky top-8">
+                    <h2 class="text-xl font-bold mb-4 text-cyan-400">Filtros</h2>
+
+                    <!-- Filtro por Categoria -->
+                    <div class="mb-4">
+                        <label for="categoria-select" class="block mb-2 text-sm font-medium">Categoria</label>
+                        <select id="categoria-select" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2.5 focus:ring-cyan-500 focus:border-cyan-500">
+                            <option value="">Todas</option>
+                            <option value="Épica">Épica</option>
+                            <option value="Rara">Rara</option>
+                            <option value="Comum">Comum</option>
+                        </select>
+                    </div>
+
+                    <!-- Filtro por Preço -->
+                    <div class="mb-6">
+                        <label for="preco-input" class="block mb-2 text-sm font-medium">Preço Máximo (R$)</label>
+                        <input type="number" id="preco-input" placeholder="Ex: 50.00" class="w-full bg-gray-700 border border-gray-600 rounded-lg p-2.5 focus:ring-cyan-500 focus:border-cyan-500">
+                    </div>
+
+                    <!-- Botão de Filtrar -->
+                    <button id="filtrar-btn" class="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                        Aplicar Filtros
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Grade de Cartas -->
+            <section id="lista-cartas" class="w-full md:w-3/4 lg:w-4/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            </section>
+        </div>
     </main>
-    <footer class="rodape"> @2025 Korb Design^ - Todos os direitos reservados</footer>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-center text-gray-400 text-sm p-4 mt-8">
+        Korb Design^ @2025 - Todos os direitos reservados
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- ELEMENTOS DO DOM ---
+            const listaCartasContainer = document.getElementById('lista-cartas');
+            const categoriaSelect = document.getElementById('categoria-select');
+            const precoInput = document.getElementById('preco-input');
+            const filtrarBtn = document.getElementById('filtrar-btn');
+
+            // --- DADOS DAS CARTAS ---
+            const cartas = [
+                {
+                    nome: 'Arkannon',
+                    preco: 3000.00,
+                    categoria: 'Épica',
+                    imagem: 'carta-arkannon.jpg'
+                },
+                {
+                    nome: 'Lymara',
+                    preco: 4000.00,
+                    categoria: 'Épica',
+                    imagem: 'carta-lymara.jpg'
+                },
+                {
+                    nome: 'Kaelthar',
+                    preco: 800.00,
+                    categoria: 'Comum',
+                    imagem: 'carta-kaelthar.jpg'
+                },
+                {
+                    nome: 'Maldrik',
+                    preco: 1500.00,
+                    categoria: 'Rara',
+                    imagem: 'carta-maldrik.jpg'
+                },
+                {
+                    nome: 'Drahven',
+                    preco: 600.00,
+                    categoria: 'Comum',
+                    imagem: 'carta-drahven.jpg'
+                },
+                {
+                    nome: 'Nyxsombra',
+                    preco: 400.00,
+                    categoria: 'Comum',
+                    imagem: 'carta-nyxsombra.jpg' 
+                }
+            ];
+
+            /**
+             * Função para renderizar as cartas na tela.
+             * Ela cria um card completo com imagem, nome, preço e categoria.
+             * @param {Array} cartasParaRenderizar - O array de cartas a ser exibido.
+             */
+            const renderizarCartas = (cartasParaRenderizar) => {
+                listaCartasContainer.innerHTML = ''; // Limpa a lista antes de renderizar
+
+                if (cartasParaRenderizar.length === 0) {
+                    listaCartasContainer.innerHTML = `<p class="col-span-full text-center text-gray-400">Nenhuma carta encontrada com os filtros selecionados.</p>`;
+                    return;
+                }
+
+                cartasParaRenderizar.forEach(carta => {
+                    const cardElement = document.createElement('div');
+                    cardElement.className = 'card bg-gray-800 rounded-lg overflow-hidden shadow-lg flex flex-col';
+
+                    // A estrutura do card com a imagem no topo.
+                    cardElement.innerHTML = `
+                        <img src="${carta.imagem}" alt="Imagem de ${carta.nome}" class="w-full h-auto object-cover aspect-[223/310]">
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h3 class="text-lg font-bold text-cyan-400">${carta.nome}</h3>
+                            <p class="mt-2 text-gray-300">R$ ${carta.preco.toFixed(2).replace('.', ',')}</p>
+                            <p class="mt-auto pt-2 text-xs text-gray-500 font-mono">${carta.categoria}</p>
+                        </div>
+                    `;
+
+                    listaCartasContainer.appendChild(cardElement);
+                });
+            };
+
+            /**
+             * Função que aplica os filtros selecionados pelo usuário.
+             */
+            const aplicarFiltros = () => {
+                const categoriaSelecionada = categoriaSelect.value;
+                const precoMaximo = parseFloat(precoInput.value) || 0;
+
+                const cartasFiltradas = cartas.filter(carta => {
+                    const filtroCategoria = !categoriaSelecionada || carta.categoria === categoriaSelecionada;
+                    const filtroPreco = !precoMaximo || carta.preco <= precoMaximo;
+                    return filtroCategoria && filtroPreco;
+                });
+
+                renderizarCartas(cartasFiltradas);
+            };
+
+            // --- EVENT LISTENERS ---
+            filtrarBtn.addEventListener('click', aplicarFiltros);
+
+            // --- INICIALIZAÇÃO ---
+            renderizarCartas(cartas); // Mostra todas as cartas inicialmente
+        });
+    </script>
 </body>
+
 </html>
