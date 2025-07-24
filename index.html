@@ -29,6 +29,25 @@
 
 <body class="bg-gray-900 text-gray-100 flex flex-col min-h-screen">
 
+    <header class="py-6 bg-gray-800 shadow-lg">
+        <div class="container mx-auto flex justify-center items-center flex-col gap-2">
+            
+            <!-- SVG ÍCONE DA LOGO -->
+            <div class="h-16 w-16 text-cyan-400">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <title>Ícone da Torre de Urza</title>
+                    <circle cx="50" cy="50" r="45"/>
+                    <rect x="28" y="25" width="44" height="60" rx="5" ry="5" transform="rotate(-5 50 50)" stroke-width="2.5"/>
+                    <path d="M45,55 Q50,40 55,55 T65,45 Q60,30 50,20 Q40,30 35,45 T45,55" stroke-width="2"/>
+                </svg>
+            </div>
+            <h1 class="text-xl font-bold tracking-wider text-gray-200">A TORRE DE URZA</h1>
+
+        </div>
+    </header>
+
+<body class="bg-gray-900 text-gray-100 flex flex-col min-h-screen">
+
     <!-- Seção do Cabeçalho com a Logo -->
     <header class="py-6 bg-gray-800 shadow-lg">
         <div class="container mx-auto flex justify-center">
@@ -95,45 +114,40 @@
                     nome: 'Arkannon',
                     preco: 3000.00,
                     categoria: 'Épica',
-                    imagem: 'carta-arkannon.jpg'
+                    imagem: 'carta-arkannon.png'
                 },
                 {
                     nome: 'Lymara',
                     preco: 4000.00,
                     categoria: 'Épica',
-                    imagem: 'carta-lymara.jpg'
+                    imagem: 'carta-lymara.png'
                 },
                 {
                     nome: 'Kaelthar',
                     preco: 800.00,
                     categoria: 'Comum',
-                    imagem: 'carta-kaelthar.jpg'
+                    imagem: 'carta-kaelthar.png'
                 },
                 {
                     nome: 'Maldrik',
                     preco: 1500.00,
                     categoria: 'Rara',
-                    imagem: 'carta-maldrik.jpg'
+                    imagem: 'carta-maldrik.png'
                 },
                 {
                     nome: 'Drahven',
                     preco: 600.00,
                     categoria: 'Comum',
-                    imagem: 'carta-drahven.jpg'
+                    imagem: 'carta-drahven.png'
                 },
                 {
                     nome: 'Nyxsombra',
                     preco: 400.00,
                     categoria: 'Comum',
-                    imagem: 'carta-nyxsombra.jpg' 
+                    imagem: 'carta-nyxsombra.png' 
                 }
             ];
 
-            /**
-             * Função para renderizar as cartas na tela.
-             * Ela cria um card completo com imagem, nome, preço e categoria.
-             * @param {Array} cartasParaRenderizar - O array de cartas a ser exibido.
-             */
             const renderizarCartas = (cartasParaRenderizar) => {
                 listaCartasContainer.innerHTML = ''; // Limpa a lista antes de renderizar
 
